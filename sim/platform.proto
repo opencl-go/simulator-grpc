@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencl-go/simulator-grpc/sim";
+
+message PlatformPrepareExtensionFunctionRequest {
+}
+
+message PlatformPrepareExtensionFunctionResponse {
+  string Name = 1;
+  uint64 Address = 2;
+}
+
+message PlatformReleaseExtensionFunctionRequest {
+  string Name = 1;
+}
+
+message PlatformReleaseExtensionFunctionResponse {
+}
+
+service Platform {
+  rpc PrepareExtensionFunction(PlatformPrepareExtensionFunctionRequest) returns (PlatformPrepareExtensionFunctionResponse) {}
+  rpc ReleaseExtensionFunction(PlatformReleaseExtensionFunctionRequest) returns (PlatformReleaseExtensionFunctionResponse) {}
+}

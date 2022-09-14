@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/opencl-go/simulator-grpc/sim";
+
+message DeviceCreateRequest {
+}
+
+message DeviceCreateResponse {
+  uint64 ID = 1;
+}
+
+message DeviceDeleteRequest {
+  uint64 ID = 1;
+}
+
+message DeviceDeleteResponse {
+}
+
+service Devices {
+  rpc Create(DeviceCreateRequest) returns (DeviceCreateResponse) {}
+  rpc Delete(DeviceDeleteRequest) returns (DeviceDeleteResponse) {}
+}
